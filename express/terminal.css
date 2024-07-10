@@ -1,0 +1,63 @@
+.divTerminalWindow {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin: auto;
+}
+
+.divTerminalBody {
+  position: absolute;
+  width: 80%;
+  height: 75%;
+  left: 12%;
+  top: 15%;
+}
+
+.divTerminalInput {
+  position: absolute;
+  width: 100%;
+  height: content-fit;
+  top: 0;
+  display: inline-flex;
+}
+
+.imgTv {
+  position: absolute;
+  height: 105%;
+  width: 105%;
+  margin: auto;
+  z-index: 2;
+}
+
+.hTerminalHeader {
+  font-family: "Courier New";
+  color: #32CD32;
+}
+
+.pTerminalText {
+  font-family: "Courier New";
+  color: #32CD32;
+  font-size: 1.3em;
+}
+
+.pTerminalInputTextSolid {
+  font-family: "Courier New";
+  color: #32CD32;
+  font-size: 1.3em;
+}
+
+.inputTerminalInput {
+  background-color: black;
+  font-family: "Courier New";
+  color: #32CD32;
+  font-size: 1.3em;
+  z-index: 2;
+  border: 0px;
+  position: relative;
+  left: 0.5rem;
+  -webkit-appearance: none;
+}
+.inputTerminalInput:focus {
+  outline: none;
+}
