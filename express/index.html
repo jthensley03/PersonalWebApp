@@ -6,13 +6,31 @@
 <link rel="stylesheet" href="terminal.css">
 <link rel="stylesheet" href="page.css">
 <body>
-  <img class="imgTv" src="images/tv.png" alt="tv">
   <div class="divTerminalWindow">
     <div class="divTerminalBody">
+      <div class="divTerminalContent" id="divTerminalContent"></div>
       <div class="divTerminalInput">
         <p class="pTerminalInputTextSolid">C:\Users\guest></p>
-	<textarea id="terminalInput" name="terminalInput" class="inputTerminalInput" type="text" spellcheck="false" placeholder="/help" autofocus/></textarea>
+	<form name="terminalInputForm" id="terminalInputForm">
+	  <textarea id="terminalInput" name="terminalInput" class="inputTerminalInput" type="text" spellcheck="false" placeholder="/help" autofocus/></textarea>
+          <input type="submit" hidden />
+	</form>
       </div>
     </div>
   </div>
+  <script>
+    document.getElementById("terminalInput").addEventListener("keypress", e => {
+      if (e.key === "Enter") {
+          e.preventDefault();
+          //e.currentTarget.closest("form").submit();
+          let cmd = document.getElementById("terminalInput").value;
+          console.log(cmd);
+	  document.getElementById("terminalInput").value = "";
+          document.getElementById("divTerminalContent").innerHTML += `
+            <p class="pTerminalInputTextSolid">C:\\Users\\guest> ${cmd}</p>
+          `;
+	  window.scrollTo(0, document.body.scrollHeight);
+      }
+    });
+  </script>
 </body>
