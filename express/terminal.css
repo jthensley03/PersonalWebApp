@@ -61,6 +61,7 @@
   color: #32CD32;
   font-size: 1.3em;
   margin: 0;
+  white-space: preserve;
 }
 
 .inputTerminalInput {
@@ -82,4 +83,38 @@
 }
 .inputTerminalInput:focus {
   outline: none;
+}
+
+.h1Resume {
+  font-family: "Courier New";
+  color: #32CD32;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 15px 0px 0px 0px;
+  width: 100%;
+  margin: 0;
+}
+.resumeSubtext {
+  font-family: "Courier New";
+  color: #32CD32;
+  font-size: 1.3em;
+  margin: 0px 0px 10px 50px;
+  width: 100%;
+  margin: 0;
+}
+.resumeDoubleSubtext {
+  font-family: "Courier New";
+  color: #32CD32;
+  font-size: 1.3em;
+  margin: 0px 0px 10px 70px;
+  width: 100%;
+  margin: 0;
+}
+.resumeTripleSubtext {
+  font-family: "Courier New";
+  color: #32CD32;
+  font-size: 1.3em;
+  margin: 0px 0px 10px 50px;
+  width: 100%;
+  margin: 0;
 }

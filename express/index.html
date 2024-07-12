@@ -12,7 +12,7 @@
       <div class="divTerminalInput">
         <p class="pTerminalInputTextSolid">C:\Users\guest></p>
 	<form name="terminalInputForm" id="terminalInputForm">
-	  <textarea id="terminalInput" name="terminalInput" class="inputTerminalInput" type="text" spellcheck="false" placeholder="/help" autofocus/></textarea>
+	  <textarea id="terminalInput" name="terminalInput" class="inputTerminalInput" type="text" spellcheck="false" placeholder="help" autofocus/></textarea>
           <input type="submit" hidden />
 	</form>
       </div>
@@ -25,10 +25,78 @@
           //e.currentTarget.closest("form").submit();
           let cmd = document.getElementById("terminalInput").value;
           console.log(cmd);
+          let response;
+          let clearb;
+          let resume;
+          switch(cmd) {
+            case "help":
+              response = `
+Welcome to my website! Here are some commands to get you started. \n
+man jason : prints my resume as a linux man page \n
+gui (coming soon) : launches graphical user interface \n
+login (coming soon) : prompts you to log in \n
+sign up (coming soon) : prompts you to create an account
+ `;
+              break;
+            case "man jason":
+              response = "";
+              resume = true;
+              break;
+            case "clear":
+              clearb = true;
+	      response = "";
+              break;
+            default:
+              response = `Command not found`;
+          } 
 	  document.getElementById("terminalInput").value = "";
-          document.getElementById("divTerminalContent").innerHTML += `
-            <p class="pTerminalInputTextSolid">C:\\Users\\guest> ${cmd}</p>
-          `;
+          if(clearb) {
+            document.getElementById("divTerminalContent").innerHTML = "";
+          } else if(resume) {
+document.getElementById("divTerminalContent").innerHTML += `
+<p class="pTerminalInputTextSolid">C:\\Users\\guest> ${cmd}</p>
+<h1 class="h1Resume">NAME</h1>
+<p class="resumeSubtext">
+  Jason Hensley
+</p>
+
+<h1 class="h1Resume">SYNOPSIS</h1>
+<p class="resumeSubtext">
+jason [--full stack] [--web applications] [--database applications] [--distributed systems] [--artificial intelligence] [--compiler design] [--security] [--theory] [--data visualization] [--other]
+</p>
+
+<h1 class="h1Resume">EXPERIENCE</h1>
+<p class="resumeSubtext">
+  Research Assistant (February 2022 - December 2023)
+</p>
+<ul class="resumeDoubleSubtext">
+  <li>Delivered a data processing pipeline powered by KiloSort to process neural data from an implanted silicon probe into a data visualization dashboard using MATLAB</li>
+  <li>Used parallel programming to efficiently process data sets with millions of values</li>
+  <li>Debugged and modified an existing large code base to work properly in a new environment</li>
+  <li>Trained extensively in data driven decision making, the scientific method, and critical analysis of technical and scientific writing</li>
+</ul>
+<p class="resumeSubtext">
+  Resident Assistant (August 2023 - May 2024)
+</p>
+<ul class="resumeDoubleSubtext">
+  <li>Responsible for the safety and social wellbeing of thirty first-year students with a diverse range of backgrounds and interests</li>
+  <li>Worked on a team of eight to effectively explain and enforce policies, plan social gatherings, and offer career and social guidance to over 200 residents</li>
+  <li>Personally resolved over twenty crisis situations working with local law enforcement and the Office of Residence Life and Housing </li>
+  <li>Formally trained in leadership skills, team and community dynamics, conflict resolution, crisis management, and the Clifton Strengths method</li>
+</ul>
+
+<h1 class="h1Resume">GENERAL KNOWLEDGE</h1>
+<h1 class="h1Resume">SEE ALSO</h1>
+<ul class="resumeSubtext">
+  <li>* Github:     <a href="http://github.com/jthensley03">http://github.com/jthensley03</a></li>
+</pre>
+`;
+          } else {
+            document.getElementById("divTerminalContent").innerHTML += `
+              <p class="pTerminalInputTextSolid">C:\\Users\\guest> ${cmd}</p>
+	      <p class="pTerminalInputTextSolid">${response}</p>
+            `;
+          }
 	  window.scrollTo(0, document.body.scrollHeight);
       }
     });
