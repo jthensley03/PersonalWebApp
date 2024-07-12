@@ -32,7 +32,7 @@
 
 .divTerminalContent {
   position: relative;
-  width: 100%;
+  width: 95%;
   height: auto;
   top: 0;
 }
@@ -53,13 +53,13 @@
 .pTerminalText {
   font-family: "Courier New";
   color: #32CD32;
-  font-size: 1.3em;
+  font-size: 1em;
 }
 
 .pTerminalInputTextSolid {
   font-family: "Courier New";
   color: #32CD32;
-  font-size: 1.3em;
+  font-size: 1em;
   margin: 0;
   white-space: preserve;
 }
@@ -68,12 +68,12 @@
   background-color: transparent;
   font-family: "Courier New";
   color: #32CD32;
-  font-size: 1.3em;
+  font-size: 1em;
   z-index: 2;
   border: 0px;
   position: absolute;
   top: 0;
-  text-indent: 12.3rem;
+  text-indent: 9.5rem;
   resize: none;
   width: 100%;
   height: 100%;
@@ -88,7 +88,7 @@
 .h1Resume {
   font-family: "Courier New";
   color: #32CD32;
-  font-size: 1.3em;
+  font-size: 1em;
   font-weight: bold;
   margin: 15px 0px 0px 0px;
   width: 100%;
@@ -97,7 +97,7 @@
 .resumeSubtext {
   font-family: "Courier New";
   color: #32CD32;
-  font-size: 1.3em;
+  font-size: 1em;
   margin: 0px 0px 10px 50px;
   width: 100%;
   margin: 0;
@@ -105,7 +105,7 @@
 .resumeDoubleSubtext {
   font-family: "Courier New";
   color: #32CD32;
-  font-size: 1.3em;
+  font-size: 1em;
   margin: 0px 0px 10px 70px;
   width: 100%;
   margin: 0;
@@ -113,7 +113,7 @@
 .resumeTripleSubtext {
   font-family: "Courier New";
   color: #32CD32;
-  font-size: 1.3em;
+  font-size: 1em;
   margin: 0px 0px 10px 50px;
   width: 100%;
   margin: 0;
