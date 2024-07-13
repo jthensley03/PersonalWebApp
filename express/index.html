@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="terminal.css">
 <link rel="stylesheet" href="page.css">
+<link rel="stylesheet" href="gui.css">
 <body>
+  <div class="guiBox" id="guiBox"></div>
   <div class="divTerminalWindow">
     <div class="divTerminalBody">
       <div class="divTerminalContent" id="divTerminalContent"></div>
@@ -46,6 +48,11 @@ sign up (coming soon) : prompts you to create an account
               clearb = true;
 	      response = "";
               break;
+            case "gui":
+              document.getElementById("guiBox").innerHTML = `<div class="guiAnimation"></div>`;
+              document.getElementById("guiBox").display = "block";
+              response = "Launching graphical user interface";
+              break;
             default:
               response = `Command not found`;
           } 
@@ -53,7 +60,7 @@ sign up (coming soon) : prompts you to create an account
           if(clearb) {
             document.getElementById("divTerminalContent").innerHTML = "";
           } else if(resume) {
-document.getElementById("divTerminalContent").innerHTML += `
+            document.getElementById("divTerminalContent").innerHTML += `
 <p class="pTerminalInputTextSolid">C:\\Users\\guest> ${cmd}</p>
 <h1 class="h1Resume">NAME</h1>
 <p class="resumeSubtext">
@@ -78,9 +85,6 @@ jason [--full stack] [--web applications] [--database applications] [--distribut
 </p>
 <p class="resumeSubtext">
   GPA: 3.81
-</p>
-<p class="resumeSubtext">
-  Honors: Dean's List (All Semesters)
 </p>
 <p class="resumeSubtext">
   Coursework: Data Structures, Algorithms, Operating Systems, Database Management, Parallel Computing, Web Development, Compiler Design, Computer Architecture, Networks, Security, Statistics

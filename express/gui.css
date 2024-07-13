@@ -1,0 +1,32 @@
+.guiBox {
+  display: hidden;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.guiAnimation {
+  margin: auto;
+  background-color: white;
+  width: 99%;
+  height: 99%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 0.5em;
+  animation: startGui .25s;
+}
+
+@keyframes startGui {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
