@@ -7,14 +7,14 @@
 <link rel="stylesheet" href="page.css">
 <link rel="stylesheet" href="gui.css">
 <body>
-  <div class="guiBox" id="guiBox"></div>
+  <div id="guiBox"></div>
   <div class="divTerminalWindow">
     <div class="divTerminalBody">
       <div class="divTerminalContent" id="divTerminalContent"></div>
       <div class="divTerminalInput">
         <p class="pTerminalInputTextSolid">C:\Users\guest></p>
 	<form name="terminalInputForm" id="terminalInputForm">
-	  <textarea id="terminalInput" name="terminalInput" class="inputTerminalInput" type="text" spellcheck="false" placeholder="help" autofocus/></textarea>
+	  <textarea id="terminalInput" name="terminalInput" class="inputTerminalInput" type="text" spellcheck="false" placeholder="help" autofocus /></textarea>
           <input type="submit" hidden />
 	</form>
       </div>
@@ -49,7 +49,9 @@ sign up (coming soon) : prompts you to create an account
 	      response = "";
               break;
             case "gui":
-              document.getElementById("guiBox").innerHTML = `<div class="guiAnimation"></div>`;
+              document.getElementById("guiBox").innerHTML = `<div class="guiBox">
+<div class="guiAnimation"></div>
+</div>`;
               document.getElementById("guiBox").display = "block";
               response = "Launching graphical user interface";
               break;
@@ -116,12 +118,11 @@ jason [--full stack] [--web applications] [--database applications] [--distribut
 </p>
 <ul class="resumeDoubleSubtext">
   <li>Delivered a data processing pipeline powered by KiloSort to process neural data from an implanted silicon probe into a data visualization dashboard using MATLAB</li>
-  <li>Used parallel programming to efficiently process data sets with millions of values</li>
-  <li>Debugged and modified an existing large code base to work properly in a new environment</li>
+  <li>Implemented parallel programming to process data sets with millions of values, decreasing original process time by over 90%</li>
   <li>Trained extensively in data driven decision making, the scientific method, and critical analysis of technical and scientific writing</li>
 </ul>
 <p class="resumeSubtext">
-  Softare Engineering Intern, University of Delaware (October 2022 - December 2022)
+  Softare Engineering Student, University of Delaware (October 2022 - December 2022)
 </p>
 <ul class="resumeDoubleSubtext">
   <li>Managed an Agile team of 3 to create an educational tool in Typescript and React.js aimed to teach children about marine life through a drag and drop aquarium experience</li>
@@ -148,7 +149,9 @@ jason [--full stack] [--web applications] [--database applications] [--distribut
 </ul>
 <h1 class="h1Resume">SEE ALSO</h1>
 <ul class="resumeSubtext">
-  <li>* Github:     <a href="http://github.com/jthensley03">http://github.com/jthensley03</a></li>
+  <li>Github:     <a href="https://github.com/jthensley03">https://github.com/jthensley03</a></li>
+  <li>Email:     <a href="mailto:jasonh@udel.edu">jasonh@udel.edu</a></li>
+  <li>Github:     <a href="https://linkedin.com/in/jasonthensley">https://linkedin.com/in/jasonthensley</a></li>
 </pre>
 `;
           } else {
@@ -157,7 +160,7 @@ jason [--full stack] [--web applications] [--database applications] [--distribut
 	      <p class="pTerminalInputTextSolid">${response}</p>
             `;
           }
-	  window.scrollTo(0, document.body.scrollHeight);
+	  document.getElementById("divTerminalContent").scrollTop = document.getElementById("divTerminalContent").scrollHeight;
       }
     });
   </script>
