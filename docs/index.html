@@ -21,6 +21,9 @@
     </div>
   </div>
   <script>
+    function closeGui() {
+      document.getElementById("guiBox").innerHTML = "";
+    }
     document.getElementById("terminalInput").addEventListener("keypress", e => {
       if (e.key === "Enter") {
           e.preventDefault();
@@ -50,7 +53,35 @@ sign up (coming soon) : prompts you to create an account
               break;
             case "gui":
               document.getElementById("guiBox").innerHTML = `<div class="guiBox">
-<div class="guiAnimation"></div>
+<div id="guiAnimation" class="guiAnimation">
+<button class="guiClose" onClick="closeGui();"></button>
+<div class="guiCardContainer">
+<div class="guiCard" style="grid-row-start: 2; grid-row-end: 3; grid-column-start: 2; grid-column-end: 3;">
+  <div class="guiCardCover"><img src="images/cardPaper.jpg" class="cardImg"></div>
+</div>
+<div class="guiCard" style="grid-row-start: 2; grid-row-end: 3; grid-column-start: 4; grid-column-end: 5;">
+<div class="guiCardCover"><img src="images/cardPaper.jpg" class="cardImg"></div>
+</div>
+<div class="guiCard" style="grid-row-start: 2; grid-row-end: 3; grid-column-start: 6; grid-column-end: 7;">
+  <div class="guiCardCover"><img src="images/cardPaper.jpg" class="cardImg"></div>
+</div>
+<div class="guiCard" style="grid-row-start: 2; grid-row-end: 3; grid-column-start: 8; grid-column-end: 9;">
+  <div class="guiCardCover"><img src="images/cardPaper.jpg" class="cardImg"></div>
+</div>
+<div class="guiCard" style="grid-row-start: 4; grid-row-end: 5; grid-column-start: 2; grid-column-end: 3;">
+  <div class="guiCardCover"><img src="images/cardPaper.jpg" class="cardImg"></div>
+</div>
+<div class="guiCard" style="grid-row-start: 4; grid-row-end: 5; grid-column-start: 4; grid-column-end: 5;">
+  <div class="guiCardCover"><img src="images/cardPaper.jpg" class="cardImg"></div>
+</div>
+<div class="guiCard" style="grid-row-start: 4; grid-row-end: 5; grid-column-start: 6; grid-column-end: 7;">
+  <div class="guiCardCover"><img src="images/cardPaper.jpg" class="cardImg"></div>
+</div>
+<div class="guiCard" style="grid-row-start: 4; grid-row-end: 5; grid-column-start: 8; grid-column-end: 9;">
+  <div class="guiCardCover"><img src="images/cardPaper.jpg" class="cardImg"></div>
+</div>
+</div>
+</div>
 </div>`;
               document.getElementById("guiBox").display = "block";
               response = "Launching graphical user interface";
