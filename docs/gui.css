@@ -43,16 +43,21 @@
 .guiCarousel {
   height: 100vh;
   width: fit-content;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  column-gap: 0;
   position: relative;
   top: 0;
   left: 0;
   z-index: 1;
-  animation: carousel 100s infinite;
+  animation: carousel 500s infinite;
   animation-direction: alternate;
+}
+
+.guiCarouselRow {
+  height: 25%;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 0;
 }
 
 @keyframes carousel {
@@ -68,6 +73,10 @@
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+.slideImg {
+  height: 100%;
 }
 
 .guiCardContainer {
