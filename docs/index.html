@@ -52,25 +52,24 @@ sign up (coming soon) : prompts you to create an account
 	      response = "";
               break;
             case "gui":
-              document.getElementById("guiBox").innerHTML = `<div class="guiBox">
+              let conStr = `<div class="guiBox">
 <div id="guiAnimation" class="guiAnimation">
 <button class="guiClose" onClick="closeGui();"></button>
 <div id="guiCarousel" class="guiCarousel">
-  <div class="slide">
-    <img src="images/cardPaper.jpg" class="cardImg">
-  </div>
-  <div class="slide">
-    <img src="images/cardPaper.jpg" class="cardImg">
-  </div>
-  <div class="slide">
-    <img src="images/cardPaper.jpg" class="cardImg">
-  </div>
-  <div class="slide">
-    <img src="images/cardPaper.jpg" class="cardImg">
-  </div>
+<div id="guiCarousel" class="guiCarouselRow">`;
+              for(let i=1; i<59; i++) {
+                if(i==14 || i==28 || i==42) {
+                  conStr += `</div><div id="guiCarousel" class="guiCarouselRow">`;
+                }
+                conStr += `<div class="slide">
+<img class="slideImg" src="images/${i}.jpg" class="cardImg">
+</div>`;
+              }
+              conStr += `</div>
 </div>
 </div>
 </div>`;
+              document.getElementById("guiBox").innerHTML += conStr;
               document.getElementById("guiBox").display = "block";
               response = "Launching graphical user interface";
               break;
