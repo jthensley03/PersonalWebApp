@@ -162,8 +162,8 @@
 
 .guiMainHeaderContainer {
   position: absolute;
-  height: fit-content;
-  width: 40%;
+  height: 16vw;
+  width: 40vw;
   background-color: transparent;
   top: 60%;
   left: 10%;
