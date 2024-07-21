@@ -147,6 +147,7 @@
   height: fit-content;
   margin: 0;
   padding: 0;
+  z-index: 2;
 }
 
 .slideImg {
@@ -156,6 +157,31 @@
   opacity: 80%;
   margin: 0;
   padding: 0;
+  z-index: 2;
+}
+
+.guiMainHeaderContainer {
+  position: absolute;
+  height: fit-content;
+  width: 40%;
+  background-color: transparent;
+  top: 60%;
+  left: 10%;
+  z-index: 3;
+  overflow: hidden;
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
+}
+
+.guiScanHeader {
+  height: 100%;
+  width: 100%;
+}
+
+.guiMainHeader {
+  font-family: Arial;
+  color: black;
+  font-size: 0.1vh;
 }
 
 .guiCardContainer {
