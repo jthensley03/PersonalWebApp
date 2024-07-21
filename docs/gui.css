@@ -162,12 +162,20 @@
 
 .guiMainHeaderContainer {
   position: absolute;
-  height: fit-content:
-  width: fit-content;
+  height: fit-content;
+  width: 40%;
   background-color: transparent;
-  top: 50%;
-  right: 50%;
+  top: 60%;
+  left: 10%;
   z-index: 3;
+  overflow: hidden;
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
+}
+
+.guiScanHeader {
+  height: 100%;
+  width: 100%;
 }
 
 .guiMainHeader {
