@@ -56,13 +56,15 @@ sign up (coming soon) : prompts you to create an account
 <div id="guiAnimation" class="guiAnimation">
 <button class="guiClose" onClick="closeGui();"></button>
 <div id="guiCarousel" class="guiCarousel">
-<div id="guiCarousel" class="guiCarouselRow">`;
-              for(let i=1; i<59; i++) {
-                if(i==14 || i==28 || i==42) {
-                  conStr += `</div><div id="guiCarousel" class="guiCarouselRow">`;
+<div class="guiCarouselCol">`;
+              for(let i=2; i<60; i++) {
+                if(i==17 || i==46) {
+                  conStr += `</div><div id="guiCarouselColRev` + i + `" class="guiCarouselColRev">`;
+                } else if (i==32) {
+                  conStr += `</div><div class="guiCarouselCol">`;
                 }
                 conStr += `<div class="slide">
-<img class="slideImg" src="images/p${i}.jpg" class="cardImg">
+<img class="slideImg" src="img/p${i}.jpg" class="cardImg">
 </div>`;
               }
               conStr += `</div>

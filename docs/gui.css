@@ -10,7 +10,7 @@
 
 .guiAnimation {
   margin: auto;
-  background-color: #e8e8e8;
+  background-color: #C0C0C0;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -41,42 +41,75 @@
 }
 
 .guiCarousel {
-  height: 100vh;
-  width: fit-content;
+  width: 100vw;
+  height: fit-content;
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 0;
   top: 0;
   left: 0;
   z-index: 1;
-  animation: carousel 500s infinite;
+}
+
+.guiCarouselCol {
+  position: relative;
+  top: 0;
+  animation: carousel 1000s linear infinite;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
   animation-direction: alternate;
 }
 
-.guiCarouselRow {
-  height: 25%;
-  width: fit-content;
+.guiCarouselColRev {
+  position: relative;
+  width: 100%;
+  bottom: 70%;
+  height: fit-content;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  column-gap: 0;
+  gap: 0;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column-reverse;
+  animation: carouselRev 1000s linear infinite;
+  animation-direction: alternate;
 }
 
 @keyframes carousel {
   from {
-    transform: translateX(0);
+    transform: translateY(0);
   }
   to {
-    transform: translateX(-90%);
+    transform: translateY(-80%);
+  }
+}
+
+@keyframes carouselRev {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(80%);
   }
 }
 
 .slide {
-  height: 100%;
+  width: 100%;
+  height: fit-content;
   margin: 0;
   padding: 0;
 }
 
 .slideImg {
+  width: 100%;
   height: 100%;
+  opacity: 80%;
+  margin: 0;
+  padding: 0;
 }
 
 .guiCardContainer {
