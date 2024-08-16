@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="terminal.css">
 <link rel="stylesheet" href="page.css">
 <link rel="stylesheet" href="gui.css">
+<script src="https://kit.fontawesome.com/b50e203f0d.js" crossorigin="anonymous"></script>
 <body>
   <div id="guiBox"></div>
   <div class="divTerminalWindow">
@@ -24,10 +25,37 @@
     function closeGui() {
       document.getElementById("guiBox").innerHTML = "";
     }
+    async function profileIsland() {
+      document.getElementById("guiDown").style.display = "none";
+      document.getElementById("guiClose").style.display = "none";
+      document.getElementById("guiProfile").style.left = "50%";
+      document.getElementById("guiProfile").style.transform = "translateX(-50%)";
+      document.getElementById("guiProfile").style.transition = "left 0.5s ease-in, transform 0.5s ease-in";
+      document.getElementById("guiNavBar").style.width = "20vw";
+      document.getElementById("guiNavBar").style.transition = "width 0.5s ease-in, height 0.5s ease-in";
+      document.getElementById("guiNavBar").style.boxShadow = "none";
+      document.getElementById("profileIsland").style.height = "10vw";
+      document.getElementById("profileIsland").style.width = "20vw";
+      document.getElementById("profileIsland").style.transition = "height 0.5s ease-in, width 0.5s ease-in";
+      await new Promise(r => setTimeout(r, 500));
+      document.getElementById("guiNavBar").style.transition = "";
+    }
+    async function defaultIsland() {
+      document.getElementById("guiProfile").style.left = "0.15vw";
+      document.getElementById("guiProfile").style.transform = "";
+      document.getElementById("guiProfile").style.transition = "left 0.5s ease-in, transform 0.5s ease-in";
+      document.getElementById("guiNavBar").style.width = "5vw";
+      document.getElementById("guiNavBar").style.transition = "width 0.5s ease-in, height 0.5s ease-in";
+      document.getElementById("profileIsland").style.height = "0.5vw";
+      document.getElementById("profileIsland").style.width = "5vw";
+      document.getElementById("profileIsland").style.transition = "height 0.5s ease-in, width 0.5s ease-in";
+      await new Promise(r => setTimeout(r, 500));
+      document.getElementById("guiDown").style.display = "block";
+      document.getElementById("guiClose").style.display = "block";
+    }
     document.getElementById("terminalInput").addEventListener("keypress", e => {
       if (e.key === "Enter") {
           e.preventDefault();
-          //e.currentTarget.closest("form").submit();
           let cmd = document.getElementById("terminalInput").value;
           console.log(cmd);
           let response;
@@ -54,7 +82,20 @@ sign up (coming soon) : prompts you to create an account
             case "gui":
               let conStr = `<div class="guiBox">
 <div id="guiAnimation" class="guiAnimation">
-<button class="guiClose" onClick="closeGui();"></button>
+<div id="guiNavBar" class="guiNavBar">
+  <button id="guiProfile" class="guiProfile" onclick="profileIsland()">
+    <i class="fa-solid fa-circle-user"></i>  
+  </button>
+  <button id="guiDown" class="guiDown">
+    <i class="fa-solid fa-caret-down"></i>  
+  </button>
+  <button id="guiClose" class="guiClose" onClick="closeGui();">
+    <i class="fa-solid fa-circle-xmark"></i>  
+  </button>
+</div>
+<div id="guiNavBarContent">
+  <div id="profileIsland" class="profileIsland"></div>
+</div>
 <div id="guiCarousel" class="guiCarousel">
 <div class="guiCarouselCol1">`;
               for(let i=2; i<60; i++) {
@@ -78,6 +119,12 @@ sign up (coming soon) : prompts you to create an account
 </div>`;
               document.getElementById("guiBox").innerHTML += conStr;
               document.getElementById("guiBox").display = "block";
+              document.getElementById("guiProfile").addEventListener("mouseenter", e => {
+                profileIsland();
+              });
+              document.getElementById("guiNavBar").addEventListener("mouseleave", e => {
+                defaultIsland();
+              });
               response = "Launching graphical user interface";
               break;
             default:
