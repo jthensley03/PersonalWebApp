@@ -237,7 +237,7 @@
   font: inherit;
   font-size: 1.25vw;
   cursor: pointer;
-  z-index: 2;
+  z-index: 4;
   color: #4c544d;
 }
 
@@ -252,7 +252,7 @@
   font: inherit;
   font-size: 1.25vw;
   cursor: pointer;
-  z-index: 2;
+  z-index: 4;
   color: #4c544d;
 }
 
@@ -266,7 +266,7 @@
   font: inherit;
   font-size: 1.25vw;
   cursor: pointer;
-  z-index: 2;
+  z-index: 4;
   color: #4c544d;
   background-color: none;
 }
@@ -301,14 +301,13 @@
 
 .profileIsland {
   position: absolute;
-  top: 2.25vw;
+  top: 1.5vw;
   left: 50%;
   z-index: 2;
   transform: translateX(-50%);
   background-color: #f5f4f6;
   width: 5vw;
-  height: 0.5vw;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  height: 1.5vw;
+  border-radius: 15px 15px 15px 15px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
